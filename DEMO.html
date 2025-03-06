@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>First Webpage</title>
     <style>
+        /* Apply a fade-in effect to the body */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
@@ -13,13 +14,27 @@
             padding: 0;
             text-align: center;
             padding-top: 50px;
+            animation: fadeIn 1.5s ease-out;
         }
+
+        /* Animate the header with a slide-in effect */
         h1 {
             color: #4CAF50;
+            animation: slideInFromLeft 1s ease-out;
         }
+
+        /* Add a fade-in effect for the paragraph */
+        p {
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        /* Add a fade-in animation for the form container */
         .form-container {
             margin-top: 30px;
+            animation: fadeIn 2s ease-out;
         }
+
+        /* Style the submit button and add hover effect */
         input[type="submit"] {
             padding: 10px 20px;
             font-size: 16px;
@@ -28,15 +43,35 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+            animation: bounce 2s infinite;
         }
+
         input[type="submit"]:hover {
             background-color: #0056b3;
+            transform: scale(1.1); /* Slightly enlarge the button on hover */
+        }
+
+        /* Animation Definitions */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideInFromLeft {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
     </style>
 </head>
 <body>
     <h1>Welcome to the First Webpage</h1>
-    <p>This page has a submit button. When you click it, you will be redirected to another website.</p>
+    <p>This page has a submit button. When you click it, you will be redirected to another webpage.</p>
 
     <!-- Form to navigate to the second website -->
     <div class="form-container">
